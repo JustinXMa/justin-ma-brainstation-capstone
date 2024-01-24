@@ -60,10 +60,10 @@ As a logged-in user, I'd like to be able to upload my personal build tutorials f
 ![](./src/assets/images/tutorials-list.png)
 
 #### Tutorial Page
-![](./src/assets/images/tutorial.png.png)
+![](./src/assets/images/tutorial.png)
 
 #### Register
-![](./src/assets/images/signup.png.png)
+![](./src/assets/images/signup.png)
 
 ### Data
 
