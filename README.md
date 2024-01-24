@@ -1,70 +1,158 @@
-# Getting Started with Create React App
+# Project Title
+MyCraft
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+MyCraft is a way to share and learn how to build a variety of minecraft structures
 
-In the project directory, you can run:
+### Problem
 
-### `npm start`
+Minecraft provides full freedom to build a myriad of structures, however, sometimes it's hard to portray the structures that you want, both aesthetically, and structurally. Sometimes, to build said structures, users might resort to online tutorials, however, these can often be drawn out, confusing, or hard to see visually, resulting in mistakes in the build. MyCraft is an app that allows users to both share, and learn how to build their desired structures.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### User Profile
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Minecraft players can log into the app and search for structures that they'd like to build by category. If they are builders, they can instead navigate to the upload page to share their builds to aforementioned categories. Users may also rate the uploaded builds to ensure the quality of tutorials are regulated.
 
-### `npm test`
+### Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+As a user, I'd like ot be able to find builds that suit my needs
 
-### `npm run build`
+As a logged-in user, I'd like ot be able to rate the builds that I find should I like, or dislike the build tutorials
+As a logged-in user, I'd like to be able to upload my personal build tutorials for structures I've made
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Implementation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React
+- MySQL
+- Express
+- Client libraries: 
+    - react
+    - react-router
+    - axios
+- Server libraries:
+    - knex
+    - express
+    - bcrypt for password hashing
 
-### `npm run eject`
+### APIs
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- No external APIs will be used for the first sprint
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Sitemap
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Home page/Login
+- Upload Page
+- Tutorials List Page
+- Tutorial Page
+- Register
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Mockups
 
-## Learn More
+#### Home Page/Login
+![](./src/assets/images/homepage.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Upload Page
+![](./src/assets/images/upload-page.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Tutorials List Page
+![](./src/assets/images/tutorials-list.png)
 
-### Code Splitting
+#### Tutorial Page
+![](./src/assets/images/tutorial.png.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Register
+![](./src/assets/images/signup.png.png)
 
-### Analyzing the Bundle Size
+### Data
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![](./src/assets/images/mycraft-database.png)
 
-### Making a Progressive Web App
+### Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**GET /tutorials-list**
 
-### Advanced Configuration
+- Get a list of tutorials
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Parameters:
+- name: name of tutorial
+- category: category depicting type of structure that is being built
+- views: number of views
+- likes: number of likes
+- builder: username of uploader
 
-### Deployment
+**GET /tutorials-list/tutorial/:tutorialId**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Get a tutorial
 
-### `npm run build` fails to minify
+Parameters:
+- name: name of tutorial
+- category: category depicting type of structure that is being built
+- views: number of views
+- likes: number of likes
+- instructions: set of instructions on how to complete the build
+- builder: username of uploader
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**POST /users/register**
+
+- Add a user account
+
+Parameters:
+
+- username: User's username
+- email: User's email
+- password: User's provided password
+
+Response:
+```
+{
+    "token": "seyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6I..."
+}
+```
+
+**POST /users/login**
+
+- Login a user
+
+Parameters:
+- username/email: User's username or email
+- password: User's provided password
+
+Response:
+```
+{
+    "token": "seyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6I..."
+}
+```
+
+### Auth
+
+Guest users can view tutorials, but not upload, like, nor dislike. 
+Once the user logs in, they can have access to uploading, and rating. 
+
+## Roadmap
+
+- Set up initial client and server
+    - create the necessary routes, directories, and files for both the frontend and backend
+    - create migrations for backend
+    - create seeds with sample café data for backend
+    - finish frontend componets and pages, functionality not needed at this point, just want to have the site aesthetically pleasing
+
+- Add functionality to backend 
+    - make the routes and controllers needed for a functional database calls and test them on Postman to ensure they work
+
+- Add functionality to frontend
+    - start adding functions for navigation and database calls
+    - connect frontend to backend 
+
+- Polish
+    - Test website for any functionality bugs
+    - If time permits, create breakpoints and test breakpoints for aesthetics bugs
+
+## Nice-to-haves
+
+- Breakpoints if possible, but start with desktop initially for time constraints
+- Add visual aspect for tutorials page, this may be more difficult to pull off due to 3D/XYZ axis
+- Like and view functionality on the tutorial/tutorial list pages/components
+- Adding a search function to find specific builds/tutorials
