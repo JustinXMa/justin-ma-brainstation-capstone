@@ -1,6 +1,6 @@
 @use '../../styles/partials/globals.scss' as *;
 
-.home-page {
+.sign-up {
     font-family: minecraft;
 
     @include desktop {
@@ -71,7 +71,7 @@
         }
     }
 
-    &__sign-up {
+    &__login {
         text-align: center;
 
         @include desktop {
@@ -79,7 +79,7 @@
         }
     }
 
-    &__sign-up-link {
+    &__login-link {
         color: $colour-mc-blue;
 
         &:hover {
