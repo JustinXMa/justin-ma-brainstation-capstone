@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage/HomePage';
 import './App.scss';
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route />
+          <Route path='/' to={HomePage} />
         </Routes>
       </BrowserRouter>
     </>
