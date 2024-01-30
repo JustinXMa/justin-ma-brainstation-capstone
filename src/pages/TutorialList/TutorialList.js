@@ -5,7 +5,12 @@ export default function TutorialList() {
     return (
         <main className="tutorial-list">
             <div className="tutorial-list__banner">
-                <h1 className="tutorial-list__title"></h1>
+                <div className="tutorial-list__search-container">
+                    <label htmlFor="search" className='tutorial-list__search'></label>
+                    <input type="text" className="tutorial-list__search-input" id='search' name='search' placeholder='Search' />
+                </div>
+                <h1 className="tutorial-list__title">MYCRAFT</h1>
+                <button className="tutorial-list__upload-button">+ Upload</button>
             </div>
             <div className="tutorial-list__nav">
                 <div className="tutorial-list__name-and-category">

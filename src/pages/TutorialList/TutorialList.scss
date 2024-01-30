@@ -1,15 +1,62 @@
 @use '../../styles/partials/globals.scss' as *;
 
 .tutorial-list {
-    height: 40vw;
+    font-family: minecraft;
     background-color: #ffffa8;
     padding: 0;
 
     &__banner {
-        height: 10vw;
-        background-image: url(../../assets/images/dirt-block-banner.jpeg);
-        background-size: 80%;
-        background-position: 100% 10%;
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            height: 19vw;
+            background-image: url(../../assets/images/dirt-block-banner.jpeg);
+            background-size: 80%;
+            background-position: 100% 10%;
+        }
+
+    }
+
+    &__search-container {
+        @include desktop {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__search-input {
+        @include desktop {
+            width: 16.4rem;
+            font-family: minecraft;
+            padding: 1.2rem 0 1.2rem 1.4rem;
+        }
+    }
+
+    &__title {
+        @include desktop {
+            font-size: 4rem;
+            align-self: center;
+        }
+    }
+
+    &__upload-button {
+        background-color: $colour-mc-grey;
+        font-family: minecraft;
+        color: white;
+        outline: none;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $colour-mc-dark-grey;
+        }
+
+        @include desktop {
+            width: 18rem;
+            padding: 1.2rem;
+        }
     }
 
     &__nav {
