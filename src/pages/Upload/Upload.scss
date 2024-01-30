@@ -69,7 +69,7 @@
     }
 
     &__dropdown-menu {
-        width: 10rem;
+        width: 11rem;
         background-color: #fcf7e9;
         font-family: minecraft;
 
@@ -82,7 +82,7 @@
         position: relative;
         background: url('../../assets/icons/drop-down-arrow.svg');
         background-repeat: no-repeat;
-        background-position: top 0.01rem right 0.05rem;
+        background-position: top 0.008rem right 0.05rem;
     }
 
     &__description {
@@ -121,7 +121,7 @@
         @include desktop {
             width: 18rem;
             align-self: flex-end;
-            margin-top: 5rem;
+            margin-top: 2.5rem;
             margin-right: 2rem;
             padding: 1.2rem;
         }
