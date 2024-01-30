@@ -66,6 +66,11 @@
         font-family: minecraft;
         color: white;
 
+        &:hover {
+            cursor: pointer;
+            background-color: $colour-mc-dark-grey;
+        }
+
         @include desktop {
             margin-bottom: 1rem;
             padding: 1rem;
