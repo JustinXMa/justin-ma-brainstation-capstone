@@ -16,12 +16,12 @@
         @include desktop {
             display: flex;
             flex-direction: row;
-            justify-content: space-evenly;
+            justify-content: space-between;
             align-items: center;
             column-gap: 6rem;
             background-color: $colour-mc-light-grey;
 
-            padding: 0.5rem 0;
+            padding: 0.5rem 1.5rem;
         }
 
     }
@@ -30,7 +30,7 @@
         @include desktop {
             display: flex;
             flex-direction: row;
-            column-gap: 4rem;
+            column-gap: 3rem;
         }
     }
 
@@ -44,5 +44,11 @@
 
     &__category {
         font-family: minecraft;
+
+        &--name {
+            @include desktop {
+                width: 11rem;
+            }
+        }
     }
 }

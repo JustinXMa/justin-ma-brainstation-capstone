@@ -1,3 +1,4 @@
+import Tutorial from '../../components/Tutorial/Tutorial'
 import './TutorialList.scss';
 
 export default function TutorialList() {
@@ -8,7 +9,7 @@ export default function TutorialList() {
             </div>
             <div className="tutorial-list__nav">
                 <div className="tutorial-list__name-and-category">
-                    <h2 className="tutorial-list__category">Build Name</h2>
+                    <h2 className="tutorial-list__category tutorial-list__category--name">Build Name</h2>
                     <h2 className="tutorial-list__category">Category</h2>
                 </div>
                 <h2 className="tutorial-list__category">Description</h2>
@@ -19,6 +20,7 @@ export default function TutorialList() {
                 </div>
             </div>
             <div className="tutorial-list__item">
+                < Tutorial />
             </div>
         </main>
     )
