@@ -13,7 +13,7 @@ export default function HomePage() {
                 <label htmlFor="password" className="home-page__password"></label>
                 <input type="password" className="home-page__password-input" id='password' name='password' placeholder='Password' />
                 <button className="home-page__button">Login</button>
-                <p className="home-page__sign-up">New here? <Link><span className="home-page__sign-up-link">Register</span></Link></p>
+                <p className="home-page__sign-up">New here? <Link to='/signup'><span className="home-page__sign-up-link">Register</span></Link></p>
             </div>
         </main>
     )
