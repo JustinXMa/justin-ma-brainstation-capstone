@@ -2,6 +2,8 @@
 
 .home-page {
     font-family: minecraft;
+    background-image: url('../../assets/images/background_2.png');
+    background-position: center center;
 
     @include desktop {
         display: flex;
@@ -23,7 +25,7 @@
     }
 
     &__title {
-        color: $colour-mc-black;
+        color: rgb(211, 255, 223);
 
         @include desktop {
             text-align: center;
@@ -73,6 +75,7 @@
 
     &__sign-up {
         text-align: center;
+        color: rgb(211, 255, 223);
 
         @include desktop {
             padding-bottom: 1rem;
