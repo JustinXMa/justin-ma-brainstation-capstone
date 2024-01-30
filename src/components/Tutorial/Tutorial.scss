@@ -2,6 +2,7 @@
 
 .tutorial {
     font-family: minecraft;
+    background-color: #ffffa8;
 
     &__main-container {
         @include desktop {
@@ -70,6 +71,7 @@
         @include desktop {
             width: 15rem;
             height: 10rem;
+            padding: 0.5rem 0;
         }
     }
 
@@ -107,6 +109,18 @@
 
         @include desktop {
             width: 1.5rem;
+        }
+    }
+
+    &__views {
+        @include desktop {
+            width: 3.5rem;
+        }
+    }
+
+    &__likes {
+        @include desktop {
+            width: 3.5rem;
         }
     }
 }
