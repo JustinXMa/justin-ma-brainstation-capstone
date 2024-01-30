@@ -15,7 +15,7 @@
         @include desktop {
             font-size: 4rem;
             padding-bottom: 1rem;
-            padding-left: 2rem;
+            padding-left: 2.8rem;
         }
     }
 
@@ -24,6 +24,10 @@
             width: 4rem;
             padding-left: 1rem;
         }
+    }
+
+    &__content-and-button-container {
+        padding: 0;
     }
 
     &__content-container {
@@ -51,7 +55,7 @@
 
     &__build {
         width: 6.5rem;
-        margin-top: 2.5rem;
+        margin-top: 2.8rem;
     }
 
     &__build-input {
@@ -71,7 +75,7 @@
     }
 
     &__instructions {
-        margin-top: 1.8rem;
+        margin-top: 2.5rem;
         width: 6.5rem;
     }
 
@@ -79,6 +83,26 @@
         background-color: #fcf7e9;
         border: none;
         resize: none;
+    }
+
+    &__button {
+        background-color: $colour-mc-grey;
+        font-family: minecraft;
+        color: white;
+        outline: none;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $colour-mc-dark-grey;
+        }
+
+        @include desktop {
+            width: 18rem;
+            align-self: flex-end;
+            margin-top: 5rem;
+            margin-right: 2rem;
+            padding: 1.2rem;
+        }
     }
 
 }

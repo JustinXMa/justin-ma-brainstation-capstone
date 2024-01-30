@@ -1,6 +1,6 @@
 import TempImg from '../../assets/images/Steve-Bob.png'
-import EnderEye from '../../assets/images/ender-eye.png'
-import MinecraftHeart from '../../assets/images/minecraft-heart.png'
+import EnderEye from '../../assets/icons/ender-eye.png'
+import MinecraftHeart from '../../assets/icons/minecraft-heart.png'
 import './Tutorial.scss';
 
 export default function Tutorial() {
