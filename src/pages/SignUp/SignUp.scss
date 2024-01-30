@@ -1,0 +1,96 @@
+@use '../../styles/partials/globals.scss' as *;
+
+.sign-up {
+    font-family: minecraft;
+
+    @include desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__logo-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        height: 14vw;
+
+        background-image: url(../../assets/images/Steve-Signup.png);
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: 22%;
+    }
+
+    &__title {
+        color: $colour-mc-black;
+
+        @include desktop {
+            text-align: center;
+            padding: 1rem 0 3rem;
+        }
+    }
+
+    &__input-container {
+        @include desktop {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 30%;
+        }
+    }
+
+    &__user-input {
+        text-align: center;
+        font-family: minecraft;
+
+        @include desktop {
+            margin: 1rem 0;
+            padding: 1rem 0;
+        }
+    }
+
+    &__password-input {
+        text-align: center;
+        font-family: minecraft;
+
+        @include desktop {
+            margin: 0 0 1rem;
+            padding: 1rem 0;
+        }
+    }
+
+    &__button {
+        background-color: $colour-mc-grey;
+        font-family: minecraft;
+        color: white;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $colour-mc-dark-grey;
+        }
+
+        @include desktop {
+            margin-bottom: 1rem;
+            padding: 1rem;
+        }
+    }
+
+    &__login {
+        text-align: center;
+
+        @include desktop {
+            padding-bottom: 1rem;
+        }
+    }
+
+    &__login-link {
+        color: $colour-mc-blue;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}
