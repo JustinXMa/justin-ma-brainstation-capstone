@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Tutorial from '../../components/Tutorial/Tutorial'
 import './TutorialList.scss';
 
@@ -10,7 +11,9 @@ export default function TutorialList() {
                     <input type="text" className="tutorial-list__search-input" id='search' name='search' placeholder='Search' />
                 </div>
                 <h1 className="tutorial-list__title">MYCRAFT</h1>
-                <button className="tutorial-list__upload-button">+ Upload</button>
+                <Link to='/upload'>
+                    <button className="tutorial-list__upload-button">+ Upload</button>
+                </Link>
             </div>
             <div className="tutorial-list__nav">
                 <div className="tutorial-list__name-and-category">
