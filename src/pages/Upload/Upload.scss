@@ -63,6 +63,28 @@
         border: none;
     }
 
+    &__category {
+        width: 6.6rem;
+        padding: 0;
+    }
+
+    &__dropdown-menu {
+        width: 10rem;
+        background-color: #fcf7e9;
+        font-family: minecraft;
+
+        appearance: none;
+        border: 1px solid $colour-mc-light-grey;
+        outline: none;
+
+        padding: 0.2rem 1rem;
+
+        position: relative;
+        background: url('../../assets/icons/drop-down-arrow.svg');
+        background-repeat: no-repeat;
+        background-position: top 0.01rem right 0.05rem;
+    }
+
     &__description {
         width: 6.5rem;
         margin-top: 0.3rem;
