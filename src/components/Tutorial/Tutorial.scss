@@ -1,0 +1,126 @@
+@use '../../styles/partials/globals.scss' as *;
+
+.tutorial {
+    font-family: minecraft;
+    background-color: #ffffa8;
+
+    &__main-container {
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+        }
+    }
+
+    &__divider {
+        border: 1px solid $colour-mc-dark-grey;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__title-and-category {
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            column-gap: 3rem;
+            margin-top: 2rem;
+            padding-right: 5%;
+        }
+    }
+
+    // &__title-and-creator {
+    //     @include desktop {
+    //         display: flex;
+    //         flex-direction: column;
+    //         justify-content: center;
+    //     }
+    // }
+
+    &__title {
+        @include desktop {
+            font-size: 1.2rem;
+            width: 11rem;
+            padding-bottom: 0.5rem;
+        }
+    }
+
+    &__creator {
+        @include desktop {
+            font-size: 0.9rem;
+        }
+    }
+
+    &__category {
+        @include desktop {
+            width: 8rem;
+            // padding-right: 5%;
+        }
+    }
+
+    &__description {
+        @include desktop {
+            width: 15rem;
+        }
+    }
+
+    &__preview {
+        object-fit: cover;
+        object-position: center;
+
+        @include desktop {
+            width: 15rem;
+            height: 10rem;
+            padding: 0.5rem 0;
+        }
+    }
+
+    &__icon-container {
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            column-gap: 1rem;
+            padding-left: 3%;
+        }
+    }
+
+    &__views-container {
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &__likes-container {
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &__icon {
+        &--heart {
+            @include desktop {
+                width: 1.2rem;
+            }
+        }
+
+        @include desktop {
+            width: 1.5rem;
+        }
+    }
+
+    &__views {
+        @include desktop {
+            width: 3.5rem;
+        }
+    }
+
+    &__likes {
+        @include desktop {
+            width: 3.5rem;
+        }
+    }
+}
