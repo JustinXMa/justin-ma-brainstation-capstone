@@ -1,7 +1,10 @@
 @use '../../styles/partials/globals.scss' as *;
 
 .sign-up {
+    height: 60vw;
     font-family: minecraft;
+    background-image: url('../../assets/images/background_7.png');
+    background-position: center center;
 
     @include desktop {
         display: flex;
@@ -17,6 +20,8 @@
         width: 100%;
         height: 14vw;
 
+        margin: 12rem 0 0;
+
         background-image: url(../../assets/images/Steve-Signup.png);
         background-position: center top;
         background-repeat: no-repeat;
@@ -24,7 +29,7 @@
     }
 
     &__title {
-        color: $colour-mc-black;
+        color: rgb(211, 255, 223);
 
         @include desktop {
             text-align: center;
@@ -79,6 +84,7 @@
 
     &__login {
         text-align: center;
+        color: rgb(211, 255, 223);
 
         @include desktop {
             padding-bottom: 1rem;
