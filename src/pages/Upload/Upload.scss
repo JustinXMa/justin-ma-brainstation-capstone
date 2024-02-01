@@ -89,8 +89,13 @@
     }
 
     &__build-input {
+        font-family: minecraft;
         background-color: #fcf7e9;
         border: none;
+
+        &:focus {
+            background-color: #fcf7e9
+        }
     }
 
     &__category {

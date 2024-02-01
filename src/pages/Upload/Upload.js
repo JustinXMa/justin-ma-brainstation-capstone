@@ -20,15 +20,19 @@ export default function Upload() {
 
     const changeBuildName = (event) => {
         setBuildName(event.target.value)
+        console.log('title:', buildName)
     }
     const changeCategory = (event) => {
         setCategory(event.target.value)
+        console.log('category: ', category)
     }
     const changeDescription = (event) => {
         setDescription(event.target.value)
+        console.log('description: ', description)
     }
     const changeInstructions = (event) => {
         setInstructions(event.target.value)
+        console.log('instructions: ', instructions)
     }
 
     const handleFileChange = (event) => {
@@ -38,7 +42,25 @@ export default function Upload() {
 
     const isBuildNameValid = () => {
         if (buildName.length === 1) {
-
+            setErrorBuildName('Please title your tutorial');
+        }
+        return true;
+    }
+    const isCategoryValid = () => {
+        if (category.length === 1) {
+            setErrorCategory('Please select a category');
+        }
+        return true;
+    }
+    const isDescriptionValid = () => {
+        if (description.length === 1) {
+            setErrorDescription('Please add a description');
+        }
+        return true;
+    }
+    const isInstructionsValid = () => {
+        if (instructions.length === 1) {
+            setErrorInstructions('Please add instructions');
         }
         return true;
     }
@@ -49,12 +71,33 @@ export default function Upload() {
             return response;
         } catch (error) {
             console.log('upload error: ', error)
+            alert('please fill out all fields correctly')
             throw error;
         }
     }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+
+        const validations = [
+            isBuildNameValid(),
+            isCategoryValid(),
+            isDescriptionValid(),
+            isInstructionsValid()
+        ]
+
+        let error = false;
+
+        validations.forEach((isValid) => {
+            if (!isValid) {
+                error = true;
+            }
+        })
+
+        if (error) {
+            return;
+        }
+
         try {
             const newTutorial = {
                 build_name: buildName,
@@ -85,6 +128,7 @@ export default function Upload() {
                     <div className="upload__input-container">
                         <label htmlFor="build" className="upload__build">Build Name:</label>
                         <input onChange={changeBuildName} value={buildName} type="text" className="upload__build-input" id='build' name='build' />
+                        {errorBuildName && <p className="upload__error">{errorBuildName}</p>}
                     </div>
                     <div className="upload__input-container">
                         <label htmlFor="category" className="upload__category">Category:</label>
@@ -95,15 +139,18 @@ export default function Upload() {
                                 <option value="RedStone">RedStone</option>
                                 <option value="Nature">Nature</option>
                             </select>
+                            {errorCategory && <p className="upload__error">{errorCategory}</p>}
                         </div>
                     </div>
                     <div className="upload__input-container">
                         <label htmlFor="description" className="upload__description">Description:</label>
                         <textarea onChange={changeDescription} value={description} name="description" id="description" cols="30" rows="10" className="upload__description-input"></textarea>
+                        {errorDescription && <p className="upload__error">{errorDescription}</p>}
                     </div>
                     <div className="upload__input-container">
                         <label htmlFor="instructions" className="upload__instructions">Instructions:</label>
                         <textarea onChange={changeInstructions} value={instructions} name="instructions" id="instructions" cols="30" rows="10" className="upload__instructions-input"></textarea>
+                        {errorInstructions && <p className="upload__error">{errorInstructions}</p>}
                     </div>
                 </div>
                 <div className="upload__image-and-button-container">
