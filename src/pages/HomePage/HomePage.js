@@ -43,7 +43,7 @@ export default function HomePage() {
 
     const postLogin = async (data) => {
         try {
-            const response = await axios.post('http://localhost:5052/api/users/login', data)
+            const response = await axios.post('http://localhost:5053/api/users/login', data)
             return response;
         } catch (error) {
             console.log('login error: ', error)

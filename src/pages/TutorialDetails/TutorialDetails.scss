@@ -1,0 +1,80 @@
+@use '../../styles/partials/globals.scss' as *;
+
+.tutorial-details {
+    font-family: minecraft;
+    background-image: url('../../assets/images/birch-background.png');
+    background-size: 10%;
+
+    &__main-container {
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    &__info-container {
+        @include desktop {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem 1rem;
+        }
+    }
+
+    &__button {
+        background-color: $colour-mc-grey;
+        font-family: minecraft;
+        color: white;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $colour-mc-dark-grey;
+        }
+
+        @include desktop {
+            font-size: 1.5rem;
+            width: 5rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__title {
+        @include desktop {
+            font-size: 1.5rem;
+            padding-bottom: 0.5rem;
+        }
+    }
+
+    &__user {
+        @include desktop {
+            font-size: 1.2rem;
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    &__instructions {
+        @include desktop {
+            line-height: 1.2rem;
+        }
+    }
+
+    &__likes {
+        @include desktop {
+            padding-top: 16rem;
+            padding-bottom: 3rem;
+        }
+    }
+
+    &__likes-image {
+        @include desktop {
+            width: 0.8rem;
+            padding-right: 0.5rem;
+        }
+    }
+
+    &__preview {
+        @include desktop {
+            width: 70%;
+        }
+    }
+
+}

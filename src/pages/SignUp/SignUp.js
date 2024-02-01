@@ -68,7 +68,7 @@ export default function SignUp() {
 
     const postSignUp = async (newUser) => {
         try {
-            const response = await axios.post('http://localhost:5052/api/users/register', newUser)
+            const response = await axios.post('http://localhost:5053/api/users/register', newUser)
             return response;
         } catch (error) {
             console.log('post sign up error: ', error)

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import TempImg from '../../assets/images/Steve-Bob.png'
 import EnderEye from '../../assets/icons/ender-eye.png'
@@ -10,7 +11,7 @@ export default function Tutorial() {
 
     const getData = async () => {
         try {
-            const response = await axios.get('http://localhost:5052/api/tutorials')
+            const response = await axios.get('http://localhost:5053/api/tutorials')
             console.log('test', response.data)
             setData(response.data);
         } catch (error) {
@@ -26,7 +27,7 @@ export default function Tutorial() {
         <section className="tutorial">
             <hr className="tutorial__divider" />
             {data.map((tutorial) => (
-                <div className="tutorial__main-container" key={tutorial.id}>
+                <div className="tutorial__main-container" key={tutorial.create_time}>
                     <div className="tutorial__title-and-category">
                         <div className="tutorial__title-and-creator">
                             <h2 className="tutorial__title">{tutorial.build_name}</h2>
@@ -35,7 +36,9 @@ export default function Tutorial() {
                         <p className="tutorial__category">{tutorial.category}</p>
                     </div>
                     <p className="tutorial__description">{tutorial.description}</p>
-                    <img className='tutorial__preview' src={`http://localhost:5050/${tutorial.image_path}`} alt={tutorial.build_name} />
+                    <Link to={`/tutorial/${tutorial.id}`}>
+                        <img className='tutorial__preview' src={`http://localhost:5053/${tutorial.image_path}`} alt={tutorial.build_name} />
+                    </Link>
                     <div className="tutorial__icon-container">
                         <div className="tutorial__views-container">
                             <img src={EnderEye} alt="" className="tutorial__icon" />
