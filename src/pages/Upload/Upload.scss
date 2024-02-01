@@ -2,6 +2,27 @@
 
 .upload {
     font-family: minecraft;
+    background-image: url('../../assets/images/birch-background.png');
+    background-size: 6%;
+
+    &__back-button {
+        background-color: $colour-mc-grey;
+        font-family: minecraft;
+        color: white;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $colour-mc-dark-grey;
+        }
+
+        @include desktop {
+            font-size: 1.5rem;
+            width: 4rem;
+            height: 3rem;
+            margin-bottom: 0.6rem;
+            margin-left: 1rem;
+        }
+    }
 
     &__title-container {
         @include desktop {
@@ -13,9 +34,9 @@
 
     &__title {
         @include desktop {
-            font-size: 4rem;
+            font-size: 3.8rem;
             padding-bottom: 1rem;
-            padding-left: 2.8rem;
+            padding-left: 1.5rem;
         }
     }
 
@@ -30,6 +51,14 @@
         padding: 0;
     }
 
+    &__form {
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+    }
+
     &__content-container {
         @include desktop {
             display: flex;
@@ -37,6 +66,7 @@
             align-items: flex-start;
 
             height: 45vw;
+            width: 32rem;
             background-image: url('../../assets/images/empty-book.png');
             background-position: center left;
             background-size: contain;
@@ -107,6 +137,40 @@
         resize: none;
     }
 
+    &__image-and-button-container {
+        @include desktop {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__preview-container {
+        @include desktop {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: dashed 2px $colour-mc-dark-grey;
+
+            margin-bottom: 1rem;
+            padding: 15rem 20rem 16rem;
+        }
+    }
+
+    &__preview {
+        @include desktop {
+            padding-bottom: 1rem;
+        }
+    }
+
+    &__preview-input {
+        @include desktop {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
     &__button {
         background-color: $colour-mc-grey;
         font-family: minecraft;
@@ -120,11 +184,12 @@
 
         @include desktop {
             width: 18rem;
-            align-self: flex-end;
-            margin-top: 2.5rem;
-            margin-right: 2rem;
             padding: 1.2rem;
         }
     }
+}
 
+input[type='file'] {
+    color: rgba(0, 0, 0, 0);
+    width: 5.5rem;
 }

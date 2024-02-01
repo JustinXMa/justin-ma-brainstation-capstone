@@ -6,10 +6,11 @@ export default function TutorialList() {
     return (
         <main className="tutorial-list">
             <div className="tutorial-list__banner">
-                <div className="tutorial-list__search-container">
+                {/* <div className="tutorial-list__search-container">
                     <label htmlFor="search" className='tutorial-list__search'></label>
                     <input type="text" className="tutorial-list__search-input" id='search' name='search' placeholder='Search' />
-                </div>
+                </div> */}
+                <div className="empty-div">a</div>
                 <h1 className="tutorial-list__title">MYCRAFT</h1>
                 <Link to='/upload'>
                     <button className="tutorial-list__upload-button">+ Upload</button>
