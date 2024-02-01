@@ -32,11 +32,13 @@ export default function HomePage() {
         if (user.length === 0) {
             setErrorUser('Please enter a username')
         }
+        return true;
     }
     const isValidPassword = () => {
         if (password.length === 0) {
             setErrorPassword('Please enter a password')
         }
+        return true;
     }
 
     const postLogin = async (data) => {
@@ -45,30 +47,33 @@ export default function HomePage() {
             return response;
         } catch (error) {
             console.log('login error: ', error)
+            setUser('')
+            setPassword('')
+            throw error;
         }
     }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        // const validations = [
-        //     isValidUser(),
-        //     isValidPassword()
-        // ]
+        const validations = [
+            isValidUser(),
+            isValidPassword()
+        ]
 
-        // let error = false;
+        let error = false;
 
-        // validations.forEach((isValid) => {
-        //     if (!isValid) {
-        //         error = true;
-        //     }
-        // })
+        validations.forEach((isValid) => {
+            if (!isValid) {
+                error = true;
+            }
+        })
 
-        // if (error) {
-        //     console.log('validation error')
-        //     setErrorLogin('Please enter a valid username or password')
-        //     return;
-        // }
+        if (error) {
+            console.log('validation error')
+
+            return;
+        }
 
         try {
             const loginData = {
@@ -76,13 +81,15 @@ export default function HomePage() {
                 user_password: password
             }
             await postLogin(loginData);
+
+            const delay = 2000;
+            setTimeout(() => {
+                navigate('/list')
+            }, delay);
         } catch (error) {
             console.log('form submission error: ', error);
+            setErrorLogin('Please enter a valid username or password')
         }
-        const delay = 2000;
-        setTimeout(() => {
-            navigate('/list')
-        }, delay);
     }
 
     return (
