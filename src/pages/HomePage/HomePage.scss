@@ -81,6 +81,14 @@
         }
     }
 
+    &__alt-login-options-container {
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
     &__sign-up {
         text-align: center;
         color: rgb(211, 255, 223);
@@ -88,14 +96,28 @@
         @include desktop {
             padding-bottom: 1rem;
         }
+
+        &--link {
+            color: $colour-mc-blue;
+
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
     }
 
-    &__sign-up-link {
-        color: $colour-mc-blue;
 
-        &:hover {
-            cursor: pointer;
-            text-decoration: underline;
+    &__guest {
+        color: rgb(211, 255, 223);
+
+        &--link {
+            color: $colour-mc-blue;
+
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
         }
     }
 }
