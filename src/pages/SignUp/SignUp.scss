@@ -20,7 +20,7 @@
         width: 100%;
         height: 14vw;
 
-        margin: 12rem 0 0;
+        margin: 6rem 0 0;
 
         background-image: url(../../assets/images/Steve-Signup.png);
         background-position: center top;
@@ -51,7 +51,17 @@
         font-family: minecraft;
 
         @include desktop {
-            margin: 1rem 0;
+            margin: 1.5rem 0;
+            padding: 1rem 0;
+        }
+    }
+
+    &__email-input {
+        text-align: center;
+        font-family: minecraft;
+
+        @include desktop {
+            margin: 0 0 1.5rem;
             padding: 1rem 0;
         }
     }
@@ -61,7 +71,7 @@
         font-family: minecraft;
 
         @include desktop {
-            margin: 0 0 1rem;
+            margin: 0 0 1.5rem;
             padding: 1rem 0;
         }
     }

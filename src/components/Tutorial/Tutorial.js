@@ -7,13 +7,6 @@ import './Tutorial.scss';
 
 export default function Tutorial() {
     const [data, setData] = useState([])
-    const [title, setTitle] = useState('');
-    const [user, setUser] = useState('');
-    const [category, setCategory] = useState('');
-    const [description, setDescription] = useState('');
-    const [preview, setPreview] = useState('')
-    const [views, setViews] = useState(0);
-    const [likes, setLikes] = useState(0);
 
     const getData = async () => {
         try {
