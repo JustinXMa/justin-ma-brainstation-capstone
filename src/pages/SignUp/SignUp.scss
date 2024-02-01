@@ -76,6 +76,11 @@
         }
     }
 
+    &__error {
+        color: rgb(255, 69, 69);
+        margin: -1.5rem 0 0.3rem 0;
+    }
+
     &__button {
         background-color: $colour-mc-grey;
         font-family: minecraft;
@@ -87,7 +92,7 @@
         }
 
         @include desktop {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             padding: 1rem;
         }
     }

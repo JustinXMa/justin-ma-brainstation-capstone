@@ -70,8 +70,6 @@ export default function HomePage() {
         })
 
         if (error) {
-            console.log('validation error')
-
             return;
         }
 
@@ -82,7 +80,7 @@ export default function HomePage() {
             }
             await postLogin(loginData);
 
-            const delay = 2000;
+            const delay = 1000;
             setTimeout(() => {
                 navigate('/list')
             }, delay);
