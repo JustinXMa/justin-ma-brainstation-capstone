@@ -23,6 +23,8 @@ export default function TutorialList() {
             const goToLogin = window.confirm("You're not logged in! Would you like to login?")
             if (goToLogin) {
                 navigate('/login')
+            } else {
+                return;
             }
         }
 
