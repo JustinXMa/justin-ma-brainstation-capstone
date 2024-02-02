@@ -19,7 +19,7 @@ function App() {
           <Route path='/list' element={<TutorialList />} />
           <Route path='/upload' element={<Upload />} />
           <Route path='/tutorial/:id' element={<TutorialDetails />} />
-          <Route path='*' elemnt={<PageNotFound />} />
+          {/* <Route path='*' elemnt={<PageNotFound />} /> */}
         </Routes>
       </BrowserRouter>
     </>
