@@ -50,10 +50,10 @@
         }
     }
 
-    &__title {
+    &__logo {
         @include desktop {
-            font-size: 4rem;
             align-self: center;
+            padding-top: 2.5rem;
         }
     }
 

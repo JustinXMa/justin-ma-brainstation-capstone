@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Tutorial from '../../components/Tutorial/Tutorial'
+import Logo from '../../assets/icons/mycraft-logo.png'
 import './TutorialList.scss';
 
 export default function TutorialList() {
@@ -39,7 +40,8 @@ export default function TutorialList() {
                     <input type="text" className="tutorial-list__search-input" id='search' name='search' placeholder='Search' />
                 </div> */}
                 <button onClick={handleLogout} className="tutorial-list__logout-button">Logout</button>
-                <h1 className="tutorial-list__title">MYCRAFT</h1>
+                {/* <h1 className="tutorial-list__title">MYCRAFT</h1> */}
+                <img src={Logo} alt="" className="tutorial-list__logo" />
                 <button onClick={handleUpload} className="tutorial-list__upload-button">+ Upload</button>
             </div>
             <div className="tutorial-list__nav">
