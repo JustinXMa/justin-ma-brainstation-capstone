@@ -1,0 +1,10 @@
+@use '../../styles/partials/globals.scss' as *;
+
+.sign-up-success {
+    font-family: minecraft;
+
+    &__title {
+        text-align: center;
+        padding-top: 3rem;
+    }
+}
