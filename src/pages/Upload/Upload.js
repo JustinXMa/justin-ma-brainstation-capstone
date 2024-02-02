@@ -60,24 +60,6 @@ export default function Upload() {
         return true;
     }
 
-    // const decodeToken = (token) => {
-    //     try {
-    //         const decoded = jwt.decode(token, '251efcbb8b426faf44ad480785c074192dcd02195267f3ac0b8431c2ab614cdb');
-    //         return decoded
-    //     } catch (error) {
-    //         console.log('decoding error: ', error)
-    //         return null;
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     const token = sessionStorage.getItem('token');
-    //     if (token) {
-    //         const decodedUserData = decodeToken(token);
-    //         setUserData(decodedUserData);
-    //     }
-    // }, []);
-
     useEffect(() => {
         const token = sessionStorage.getItem('token');
         if (token) {
