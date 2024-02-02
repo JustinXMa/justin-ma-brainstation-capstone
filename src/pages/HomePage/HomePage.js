@@ -44,6 +44,8 @@ export default function HomePage() {
     const postLogin = async (data) => {
         try {
             const response = await axios.post('http://localhost:5053/api/users/login', data)
+            console.log('what is this logging?', response.data);
+            sessionStorage.setItem('token', response.data.token);
             return response;
         } catch (error) {
             console.log('login error: ', error)
