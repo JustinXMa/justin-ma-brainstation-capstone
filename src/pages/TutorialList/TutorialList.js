@@ -1,8 +1,34 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Tutorial from '../../components/Tutorial/Tutorial'
 import './TutorialList.scss';
 
 export default function TutorialList() {
+    const token = sessionStorage.getItem('token')
+    const navigate = useNavigate();
+
+    const handleUpload = () => {
+        if (!token) {
+            const goToLogin = window.confirm("You're not logged in! Would you like to login?")
+            if (goToLogin) {
+                navigate('/login')
+            }
+        } else {
+            navigate('/upload')
+        }
+    }
+
+    const handleLogout = () => {
+        if (!token) {
+            const goToLogin = window.confirm("You're not logged in! Would you like to login?")
+            if (goToLogin) {
+                navigate('/login')
+            }
+        }
+
+        sessionStorage.removeItem('token');
+        navigate('/login');
+    }
     return (
         <main className="tutorial-list">
             <div className="tutorial-list__banner">
@@ -10,11 +36,9 @@ export default function TutorialList() {
                     <label htmlFor="search" className='tutorial-list__search'></label>
                     <input type="text" className="tutorial-list__search-input" id='search' name='search' placeholder='Search' />
                 </div> */}
-                <div className="empty-div">a</div>
+                <button onClick={handleLogout} className="tutorial-list__logout-button">Logout</button>
                 <h1 className="tutorial-list__title">MYCRAFT</h1>
-                <Link to='/upload'>
-                    <button className="tutorial-list__upload-button">+ Upload</button>
-                </Link>
+                <button onClick={handleUpload} className="tutorial-list__upload-button">+ Upload</button>
             </div>
             <div className="tutorial-list__nav">
                 <div className="tutorial-list__name-and-category">

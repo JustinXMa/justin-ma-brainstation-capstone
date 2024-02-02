@@ -18,10 +18,27 @@
 
     }
 
-    &__search-container {
+    // &__search-container {
+    //     @include desktop {
+    //         display: flex;
+    //         flex-direction: column;
+    //     }
+    // }
+
+    &__logout-button {
+        background-color: $colour-mc-grey;
+        font-family: minecraft;
+        color: white;
+        outline: none;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $colour-mc-dark-grey;
+        }
+
         @include desktop {
-            display: flex;
-            flex-direction: column;
+            width: 18rem;
+            padding: 1.2rem;
         }
     }
 
@@ -96,8 +113,4 @@
             }
         }
     }
-}
-
-.empty-div {
-    width: 16.4rem;
 }
