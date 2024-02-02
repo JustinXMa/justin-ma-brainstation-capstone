@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+// import jwt_decode from 'jwt-decode';
 import CraftingTable from '../../assets/icons/crafting-table.png'
 import './Upload.scss';
 
@@ -11,6 +12,7 @@ export default function Upload() {
     const [instructions, setInstructions] = useState('')
     const [preview, setPreview] = useState(null);
 
+    const [userData, setUserData] = useState(null)
 
     const navigate = useNavigate();
 
@@ -29,6 +31,7 @@ export default function Upload() {
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
+        console.log('image is: ', file)
         setPreview(file);
     };
 
@@ -56,6 +59,33 @@ export default function Upload() {
         }
         return true;
     }
+
+    // const decodeToken = (token) => {
+    //     try {
+    //         const decoded = jwt.decode(token, '251efcbb8b426faf44ad480785c074192dcd02195267f3ac0b8431c2ab614cdb');
+    //         return decoded
+    //     } catch (error) {
+    //         console.log('decoding error: ', error)
+    //         return null;
+    //     }
+    // }
+
+    // useEffect(() => {
+    //     const token = sessionStorage.getItem('token');
+    //     if (token) {
+    //         const decodedUserData = decodeToken(token);
+    //         setUserData(decodedUserData);
+    //     }
+    // }, []);
+
+    useEffect(() => {
+        const token = sessionStorage.getItem('token');
+        if (token) {
+            const decodedUserData = JSON.parse(atob(token.split('.')[1]));
+            console.log(decodedUserData)
+            setUserData(decodedUserData);
+        }
+    }, []);
 
     const postTutorial = async (newContent) => {
         try {
@@ -91,13 +121,34 @@ export default function Upload() {
         }
 
         try {
-            const newTutorial = {
-                build_name: buildName,
-                category: category,
-                description: description,
-                instructions: instructions,
-            }
-            await postTutorial(newTutorial)
+            // const newTutorial = {
+            //     build_name: buildName,
+            //     build_creator: userData.user_credentials,
+            //     category: category,
+            //     description: description,
+            //     instructions: instructions,
+            //     image_path: preview,
+            //     user_id: userData.id
+            // }
+            // console.log(newTutorial)
+
+            const formData = new FormData();
+            formData.append('image', preview);
+            formData.append('build_name', buildName);
+            formData.append('build_creator', userData.user_credentials);
+            formData.append('category', category);
+            formData.append('description', description);
+            formData.append('instructions', instructions);
+            formData.append('user_id', userData.id);
+            console.log(formData);
+
+            const config = {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            };
+
+            await postTutorial(formData, config)
             const delay = 1000;
             setTimeout(() => {
                 navigate('/list')
@@ -145,7 +196,7 @@ export default function Upload() {
                 <div className="upload__image-and-button-container">
                     <div className="upload__preview-container">
                         <label htmlFor="image" className='upload__preview'>Choose an image:</label>
-                        <input onChange={handleFileChange} type="file" id="image" className='upload__preview-input' />
+                        <input onChange={handleFileChange} type="file" id="image" accept='image/*' className='upload__preview-input' />
                     </div>
                     <button className="upload__button">Upload</button>
                 </div>

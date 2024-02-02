@@ -25,7 +25,7 @@ export default function Tutorial() {
         <section className="tutorial">
             <hr className="tutorial__divider" />
             {data.map((tutorial) => (
-                <div className="tutorial__main-container" key={tutorial.id}>
+                <div className="tutorial__main-container" key={tutorial.create_time}>
                     <div className="tutorial__title-and-category">
                         <div className="tutorial__title-and-creator">
                             <h2 className="tutorial__title">{tutorial.build_name}</h2>
