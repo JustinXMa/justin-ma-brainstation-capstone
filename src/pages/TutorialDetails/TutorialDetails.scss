@@ -2,6 +2,7 @@
 
 .tutorial-details {
     font-family: minecraft;
+    height: 50vw;
     background-image: url('../../assets/images/birch-background.png');
     background-size: 10%;
 
@@ -16,6 +17,7 @@
         @include desktop {
             display: flex;
             flex-direction: column;
+            width: 40%;
             padding: 1rem 1rem;
         }
     }
@@ -71,9 +73,19 @@
         }
     }
 
+    &__preview-container {
+        @include desktop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
     &__preview {
         @include desktop {
-            width: 70%;
+            border: 10px solid $colour-mc-grey;
+            width: 80%;
+            margin-top: 5rem;
         }
     }
 

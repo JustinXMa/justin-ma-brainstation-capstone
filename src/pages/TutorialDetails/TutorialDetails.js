@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import Likes from '../../assets/icons/minecraft-heart.png'
 import './TutorialDetails.scss';
@@ -13,7 +13,6 @@ export default function TutorialDetails() {
     const getData = async () => {
         try {
             const response = await axios.get(`http://localhost:5053/api/tutorials/${convertedId}`)
-            console.log(response.data)
             setData(response.data)
         } catch (error) {
             console.log('error getting data: ', error)
@@ -41,7 +40,13 @@ export default function TutorialDetails() {
                     <p className="tutorial-details__instructions">Instructions: {data.instructions}</p>
                     <p className="tutorial-details__likes">Likes <img src={Likes} alt="likes icon" className="tutorial-details__likes-image" />: {data.likes}</p>
                 </div>
-                <img className="tutorial-details__preview" src={`http://localhost:5053/${data.image_path}`} alt={data.build_name} />
+                <div className="tutorial-details__preview-container">
+                    {data.image_path && (
+                        <div className="tutorial-details__preview-container">
+                            <img className="tutorial-details__preview" src={`http://localhost:5053/${data.image_path}`} alt={data.build_name} />
+                        </div>
+                    )}
+                </div>
             </div>
         </main>
     )
