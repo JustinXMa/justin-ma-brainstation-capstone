@@ -52,7 +52,7 @@
 
     &__title {
         @include desktop {
-            font-size: 4rem;
+            font-size: 5rem;
             align-self: center;
         }
     }
@@ -82,6 +82,9 @@
             align-items: center;
             column-gap: 6rem;
             background-color: $colour-mc-light-grey;
+
+            position: sticky;
+            top: 0;
 
             padding: 0.5rem 1.5rem;
         }
