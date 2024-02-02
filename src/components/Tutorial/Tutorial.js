@@ -23,7 +23,6 @@ export default function Tutorial() {
 
     return (
         <section className="tutorial">
-            <hr className="tutorial__divider" />
             {data.map((tutorial) => (
                 <div className="tutorial__main-container" key={tutorial.create_time}>
                     <div className="tutorial__title-and-category">

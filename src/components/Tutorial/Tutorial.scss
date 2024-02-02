@@ -3,14 +3,15 @@
 .tutorial {
     font-family: minecraft;
     background-image: url('../../assets/images/birch-background.png');
-    background-size: 10%;
+    background-size: 10.11%;
 
     &__main-container {
         @include desktop {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            padding: 0 1.5rem;
+            border: 2px solid $colour-mc-grey;
+            padding: 0 1.1rem 0 1.5rem;
         }
     }
 
@@ -25,36 +26,39 @@
             display: flex;
             flex-direction: row;
             column-gap: 3rem;
-            margin-top: 2rem;
+            margin-top: 0.1rem;
             padding-right: 5%;
         }
     }
 
     &__title {
         @include desktop {
-            font-size: 1.2rem;
+            font-size: 1.8rem;
             width: 11rem;
-            padding-bottom: 0.5rem;
+            padding-bottom: 0.6rem;
         }
     }
 
     &__creator {
         @include desktop {
-            font-size: 0.9rem;
+            font-size: 1.2rem;
         }
     }
 
     &__category {
         @include desktop {
+            font-size: 1.5rem;
             width: 8rem;
-            margin-top: 1rem;
+            margin-top: 0.3rem;
         }
     }
 
     &__description {
         @include desktop {
+            font-size: 1.5rem;
+            line-height: 2.32rem;
             width: 15rem;
-            margin-top: 2rem;
+            margin-top: 0.1rem;
         }
     }
 
@@ -73,8 +77,10 @@
         @include desktop {
             display: flex;
             flex-direction: row;
+            align-items: center;
             column-gap: 1rem;
-            padding-left: 3%;
+            padding-bottom: 4.3rem;
+            padding-left: 2%;
         }
     }
 
@@ -97,24 +103,28 @@
     &__icon {
         &--heart {
             @include desktop {
-                width: 1.2rem;
+                width: 2.1rem;
+                padding-right: 0.4rem;
             }
         }
 
         @include desktop {
-            width: 1.5rem;
+            width: 2.5rem;
+            padding-right: 0.4rem;
         }
     }
 
     &__views {
         @include desktop {
-            width: 3.5rem;
+            font-size: 1.5rem;
+            width: 2.5rem;
         }
     }
 
     &__likes {
         @include desktop {
-            width: 3.5rem;
+            font-size: 1.5rem;
+            width: 2.5rem;
         }
     }
 }
