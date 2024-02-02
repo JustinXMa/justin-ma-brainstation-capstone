@@ -13,7 +13,7 @@ export default function Tutorial() {
             const response = await axios.get('http://localhost:5053/api/tutorials')
             setData(response.data);
         } catch (error) {
-
+            console.log('get response issue: ', error)
         }
     }
 
