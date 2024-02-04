@@ -2,9 +2,66 @@
 
 .sign-up-success {
     font-family: minecraft;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-image: url('../../assets/images/dirt-background.png');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vw;
 
     &__title {
         text-align: center;
-        padding-top: 3rem;
+        color: white;
+        padding-left: 1rem;
+    }
+
+    &__animation-container {
+        display: flex;
+        flex-direction: row;
+        width: 30%;
+        margin-top: 2rem;
+        margin-bottom: 8rem;
+    }
+
+    &__border {
+        position: relative;
+        height: 32px;
+        width: 100%;
+        border: 16px solid $colour-mc-light-grey;
+    }
+
+    &__border &__progress {
+        // position: absolute;
+        background-color: #ffffff;
+        width: 0px;
+        height: 32px;
+        animation: progress 2s forwards linear;
+        box-sizing: border-box;
+    }
+}
+
+@keyframes progress {
+    0% {
+        width: 0%;
+    }
+
+    25% {
+        width: 25%;
+    }
+
+    50% {
+        width: 50%;
+    }
+
+    75% {
+        width: 75%;
+    }
+
+    100% {
+        width: 100%;
     }
 }
