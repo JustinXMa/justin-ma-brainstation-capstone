@@ -1,0 +1,101 @@
+@use '../../styles/partials/globals.scss' as *;
+
+// import React, { useRef, useEffect, useState } from 'react';
+// import { createRoot } from 'react-dom/client'
+// import { Canvas } from '@react-three/fiber'
+// import { Box } from '@react-three/drei'
+// import * as THREE from 'three';
+// import './Three.scss';
+
+// export default function Three() {
+
+//     return (
+//         <section className="three">
+//             <Canvas>
+//                 <ambientLight intensity={0.1} />
+//                 <directionalLight color="red" position={[0, 0, 5]} />
+
+//                 {/* Use Box component and set wireframe attribute to true */}
+//                 <Box args={[1, 1, 1]} position={[0, 0, 0]}>
+//                     <meshBasicMaterial attach="material" color="blue" wireframe />
+//                 </Box>
+//             </Canvas>
+//         </section>
+//     );
+// }
+
+
+// ________________________
+
+// import React, { useRef, useState } from 'react';
+// import { Canvas, useFrame, useThree, extend } from '@react-three/fiber';
+// import { GridHelper } from 'three';
+// import { OrbitControls, TransformControls, PointerLockControls } from 'three-stdlib'
+// extend({ OrbitControls, TransformControls, PointerLockControls })
+
+// // A simple block component
+// const Block = ({ position, onClick }) => {
+//     const ref = useRef();
+
+//     return (
+//         <mesh
+//             ref={ref}
+//             position={position}
+//             onClick={(e) => onClick(e, ref)}
+//         >
+//             <boxGeometry args={[1, 1, 1]} />
+//             <meshBasicMaterial color={'#00ff00'} />
+
+//         </mesh>
+//     );
+// };
+
+// // Controls for the camera
+// const CameraControls = () => {
+//     const { camera, gl } = useThree();
+//     const controls = useRef();
+
+//     useFrame(() => controls.current.update());
+
+//     return <orbitControls ref={controls} args={[camera, gl.domElement]} />;
+// };
+
+// // MinecraftGrid component
+// const MinecraftGrid = () => {
+//     const [blocks, setBlocks] = useState([]);
+
+//     const handleClick = (event, blockRef) => {
+//         const { x, y, z } = blockRef.current.position;
+
+//         // For simplicity, let's just log the clicked coordinates
+//         console.log(`Clicked block at (${x}, ${y}, ${z})`);
+
+//         // You can add more logic here to handle block placement, removal, etc.
+//         // For now, let's just add a block at the clicked position
+//         setBlocks((prevBlocks) => [
+//             ...prevBlocks,
+//             { position: { x, y, z } },
+//         ]);
+//     };
+
+//     return (
+//         <Canvas camera={{ position: [5, 5, 5] }}>
+//             <CameraControls />
+
+//             <mesh position={[0, 0, 0]}>
+//                 <boxGeometry args={[1, 1, 1]} />
+//                 <meshBasicMaterial color={'#ff0000'} />
+//             </mesh>
+
+//             <gridHelper args={[10, 10]} />
+
+//             {/* Render existing blocks */}
+//             {blocks.map((block, index) => (
+//                 <Block key={index} position={block.position} onClick={handleClick} />
+//             ))}
+
+//         </Canvas>
+//     );
+// };
+
+// export default MinecraftGrid;

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-// import jwt_decode from 'jwt-decode';
 import CraftingTable from '../../assets/icons/crafting-table.png'
+import Grid from '../../components/Grid/Grid';
 import './Upload.scss';
 
 export default function Upload() {
@@ -176,6 +176,7 @@ export default function Upload() {
                     </div>
                 </div>
                 <div className="upload__image-and-button-container">
+                    < Grid />
                     <div className="upload__preview-container">
                         <label htmlFor="image" className='upload__preview'>Choose an image:</label>
                         <input onChange={handleFileChange} type="file" id="image" accept='image/*' className='upload__preview-input' />
