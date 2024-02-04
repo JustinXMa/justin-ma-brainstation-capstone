@@ -1,6 +1,8 @@
 @use '../../styles/partials/globals.scss' as *;
 
-.sign-up-success {
+@use '../../styles/partials/globals.scss' as *;
+
+.upload-success {
     font-family: minecraft;
     display: flex;
     flex-direction: column;

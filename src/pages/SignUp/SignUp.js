@@ -108,7 +108,7 @@ export default function SignUp() {
             await postSignUp(newUser);
             const delay = 1000;
             setTimeout(() => {
-                navigate('/login')
+                navigate('/redirecting')
             }, delay);
         } catch (error) {
             console.log('sign up error: ', error)

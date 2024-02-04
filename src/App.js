@@ -5,6 +5,7 @@ import SignUpSuccess from './components/SignUpSuccess/SignUpSuccess';
 import TutorialList from './pages/TutorialList/TutorialList';
 import Upload from './pages/Upload/Upload'
 import TutorialDetails from './pages/TutorialDetails/TutorialDetails';
+import UploadSuccess from './components/UploadSuccess/UploadSuccess';
 import './App.scss';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path='/redirecting' element={<SignUpSuccess />} />
           <Route path='/list' element={<TutorialList />} />
           <Route path='/upload' element={<Upload />} />
+          <Route path='/loading' element={<UploadSuccess />} />
           <Route path='/tutorial/:id' element={<TutorialDetails />} />
           {/* <Route path='*' elemnt={<PageNotFound />} /> */}
         </Routes>

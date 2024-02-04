@@ -133,7 +133,7 @@ export default function Upload() {
             await postTutorial(formData, config)
             const delay = 1000;
             setTimeout(() => {
-                navigate('/list')
+                navigate('/loading')
             }, delay);
         } catch (error) {
             console.log('submission error: ', error)
