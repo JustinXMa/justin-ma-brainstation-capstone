@@ -30,7 +30,6 @@ export default function Upload() {
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
-        console.log('image is: ', file)
         setPreview(file);
     };
 
@@ -63,7 +62,6 @@ export default function Upload() {
         const token = sessionStorage.getItem('token');
         if (token) {
             const decodedUserData = JSON.parse(atob(token.split('.')[1]));
-            console.log(decodedUserData)
             setUserData(decodedUserData);
         }
     }, []);
@@ -112,7 +110,6 @@ export default function Upload() {
             formData.append('description', description);
             formData.append('instructions', instructions);
             formData.append('user_id', userData.id);
-            console.log(formData);
 
             const config = {
                 headers: {

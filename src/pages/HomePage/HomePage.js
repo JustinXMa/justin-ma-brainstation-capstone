@@ -15,7 +15,6 @@ export default function HomePage() {
 
     const changeUser = (event) => {
         setUser(event.target.value);
-        console.log(user)
         setErrorUser('');
         setErrorLogin('');
 
@@ -23,7 +22,6 @@ export default function HomePage() {
 
     const changePassword = (event) => {
         setPassword(event.target.value)
-        console.log(password)
         setErrorPassword('');
         setErrorLogin('');
     }
@@ -44,7 +42,6 @@ export default function HomePage() {
     const postLogin = async (data) => {
         try {
             const response = await axios.post('http://localhost:5053/api/users/login', data)
-            console.log('what is this logging?', response.data);
             sessionStorage.setItem('token', response.data.token);
             return response;
         } catch (error) {
