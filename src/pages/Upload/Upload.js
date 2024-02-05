@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-// import jwt_decode from 'jwt-decode';
 import CraftingTable from '../../assets/icons/crafting-table.png'
 import './Upload.scss';
 
@@ -103,16 +102,7 @@ export default function Upload() {
         }
 
         try {
-            // const newTutorial = {
-            //     build_name: buildName,
-            //     build_creator: userData.user_credentials,
-            //     category: category,
-            //     description: description,
-            //     instructions: instructions,
-            //     image_path: preview,
-            //     user_id: userData.id
-            // }
-            // console.log(newTutorial)
+
 
             const formData = new FormData();
             formData.append('image', preview);
