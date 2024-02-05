@@ -42,7 +42,9 @@ export default function Tutorial() {
                             <span className="tutorial__views">{tutorial.views}</span>
                         </div>
                         <div className="tutorial__likes-container">
-                            <img src={MinecraftHeart} alt="" className="tutorial__icon--heart" />
+                            <button className="tutorial__like">
+                                <img src={MinecraftHeart} alt="" className="tutorial__icon--heart" />
+                            </button>
                             <span className="tutorial__likes">{tutorial.likes}</span>
                         </div>
                     </div>
