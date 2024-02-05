@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Tutorial from '../../components/Tutorial/Tutorial'
 import Logo from '../../assets/icons/mycraft-logo.png'
 import './TutorialList.scss';
 
 export default function TutorialList() {
+    const [logoutSignUp, setLogoutSignUp] = useState();
+
     const token = sessionStorage.getItem('token')
     const navigate = useNavigate();
 
@@ -19,29 +21,36 @@ export default function TutorialList() {
         }
     }
 
-    const handleLogout = () => {
+    const setButtonDetails = () => {
         if (!token) {
-            const goToLogin = window.confirm("You're not logged in! Would you like to login?")
-            if (goToLogin) {
-                navigate('/login')
-            } else {
-                return;
-            }
+            setLogoutSignUp('Sign Up')
+        } else {
+            setLogoutSignUp('Logout')
+        }
+    }
+
+    useEffect(() => {
+        setButtonDetails()
+    }, [])
+
+    const handleLogoutSignUp = () => {
+        if (!token) {
+            navigate('/signup')
+        } else {
+            sessionStorage.removeItem('token');
+            navigate('/login');
         }
 
-        sessionStorage.removeItem('token');
-        navigate('/login');
     }
     return (
         <main className="tutorial-list">
             <div className="tutorial-list__banner">
+                <button onClick={handleLogoutSignUp} className="tutorial-list__logout-button">{logoutSignUp}</button>
+                <img src={Logo} alt="" className="tutorial-list__logo" />
                 {/* <div className="tutorial-list__search-container">
                     <label htmlFor="search" className='tutorial-list__search'></label>
                     <input type="text" className="tutorial-list__search-input" id='search' name='search' placeholder='Search' />
                 </div> */}
-                <button onClick={handleLogout} className="tutorial-list__logout-button">Logout</button>
-                {/* <h1 className="tutorial-list__title">MYCRAFT</h1> */}
-                <img src={Logo} alt="" className="tutorial-list__logo" />
                 <button onClick={handleUpload} className="tutorial-list__upload-button">+ Upload</button>
             </div>
             <div className="tutorial-list__nav">
