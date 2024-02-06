@@ -23,7 +23,7 @@ export default function TutorialList() {
 
     const setButtonDetails = () => {
         if (!token) {
-            setLogoutSignUp('Sign Up')
+            setLogoutSignUp('Sign up')
         } else {
             setLogoutSignUp('Logout')
         }
