@@ -74,8 +74,12 @@ export default function HomePage() {
 
         try {
             const loginData = {
-                user_name: user,
                 user_password: password
+            }
+            if (user.includes('@')) {
+                loginData.user_email = user;
+            } else {
+                loginData.user_name = user;
             }
             await postLogin(loginData);
 
